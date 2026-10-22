@@ -4,9 +4,9 @@
 
 Built for the **Vibe Coding Hackathon: AZ-900 Exam Prep Edition** (#1MillionDevs, Power Learn Project) in the **Practice & Assessment: Smart Quiz Builder** challenge.
 
-**Live demo:** https://claude.ai/artifact/81xeFMAvdwx4GaSW8MyMRU
+**Live prototype:** https://azure-ready-quiz.lovable.app
 
-**live demo video :** https://drive.google.com/file/d/1w9x2skkfX0x6_RmZZ1c4v6uXS5AsZzZq/view?usp=drivesdk
+**live demo video :** https://drive.google.com/file/d/1JoQYwUHai4uWmM5UjIXe749wyx4uMmRj/view?usp=drivesdk
 
 ## The problem
 
