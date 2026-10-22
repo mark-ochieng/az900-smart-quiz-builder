@@ -40,9 +40,9 @@
 5. Retry only your mistakes and watch your readiness grow.
 
 **Resources to embed:**
-- Live demo: https://claude.ai/artifact/81xeFMAvdwx4GaSW8MyMRU
+- Live prototype: https://azure-ready-quiz.lovable.app
 - GitHub: https://github.com/mark-ochieng/az900-smart-quiz-builder
-- https://drive.google.com/file/d/1w9x2skkfX0x6_RmZZ1c4v6uXS5AsZzZq/view?usp=drivesdk
+- Video demo : https://drive.google.com/file/d/1JoQYwUHai4uWmM5UjIXe749wyx4uMmRj/view?usp=drivesdk
 
 ---
 
@@ -168,8 +168,6 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 **Thank you!**
 - GitHub: https://github.com/mark-ochieng
 - Email:cruxificio.mark@gmail.com
-- LinkedIn: https://www.linkedin.com/in/john-mark-a086a4346?utm_source=share_via&utm_content=profile&utm_medium=member_android
-
 *Unofficial study tool. Not affiliated with or endorsed by Microsoft.*
 
 ---
