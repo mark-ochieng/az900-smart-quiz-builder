@@ -50,4 +50,4 @@ Content follows the public AZ-900 skills outline on Microsoft Learn. Questions a
 
 ## Author
 
-Mark Ochieng, Bachelor of Science in Information Technology, MMUST.
+Mark Ochieng.
