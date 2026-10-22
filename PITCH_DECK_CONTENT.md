@@ -46,17 +46,9 @@
 
 ---
 
-## Slide 5: Key Metrics & Statistics
-Use real numbers from the project. Replace the template placeholders (2 out of 5, 95%, 123 million):
-
-- **48** original practice questions
-- **3** AZ-900 topic areas covered
-- **2** practice modes: full quiz and retry-missed
-- **0** installs or sign-ups needed
-
 ---
 
-## Slide 6 : Target Market
+## Slide 5 : Target Market
 **Heading:** Who it is for
 
 - Beginners preparing for Azure Fundamentals (AZ-900)
@@ -67,7 +59,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 7: Market Size
+## Slide 6: Market Size
 **Heading:** A large and growing audience
 
 - AZ-900 is the entry-level Azure certification, which makes it the first step for many cloud learners.
@@ -77,7 +69,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 8: Competitors
+## Slide 7: Competitors
 **Heading:** What learners use today
 
 - Free practice assessments and learning paths on Microsoft Learn
@@ -89,7 +81,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 9: Competitive Advantage
+## Slide 8: Competitive Advantage
 **Heading:** Why Smart Quiz Builder wins
 
 - Explanation for every answer, not only the score
@@ -102,7 +94,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 10: Project Traction / Timeline
+## Slide 9: Project Traction / Timeline
 **Heading:** Milestones
 
 - **Month 1:** Built and published the working app with 48 questions, retry mode and readiness tracker (done during the hackathon). GitHub repo and documentation live.
@@ -113,7 +105,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 11: Business Model
+## Slide 10: Business Model
 **Heading:** Free for learners, sustainable for the community
 
 - Core app stays **free** for learners.
@@ -125,7 +117,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 12: Go-To-Market Strategy
+## Slide 11: Go-To-Market Strategy
 **Heading:** Reaching learners
 
 - Launch inside the #1MillionDevs and Power Learn Project community
@@ -137,7 +129,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 13: Social Impact
+## Slide 12: Social Impact
 **Heading:** SDGs we support
 
 - **SDG 4: Quality Education.** Free, understandable practice for everyone
@@ -147,7 +139,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 14: Our Ask
+## Slide 13: Our Ask
 **Heading:** What we need
 
 - **Feedback:** learners and mentors to test and review the questions
@@ -158,13 +150,13 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 15: Team Members
+## Slide 14: Team Members
 - **Mark Ochieng:** Founder and Developer
   
 
 ---
 
-## Slide 16: Thank You & Contacts
+## Slide 15: Thank You & Contacts
 **Thank you!**
 - GitHub: https://github.com/mark-ochieng
 - Email:cruxificio.mark@gmail.com
