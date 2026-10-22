@@ -166,7 +166,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 ---
 
 ## Slide 15: Team Members
-- **Mark Ochieng:** Founder and Developer, BSc Information Technology, MMUST
+- **Mark Ochieng:** Founder and Developer
 - [Add any teammates who helped, with their titles]
 
 ---
