@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Quiz Builder – AZ-900 Practice (Unofficial)</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1b1f2a;--mut:#5d6575;--ac:#2563eb;--acx:#fff;--ok:#16794a;--okb:#e3f6ec;--no:#b42318;--nob:#fdeaea;--bd:#d9dde6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1420;--card:#192032;--tx:#eef1f8;--mut:#a3adc2;--ac:#6ea0ff;--acx:#0b1020;--ok:#6ee7a8;--okb:#12342a;--no:#ff8a80;--nob:#3a1a1c;--bd:#2c3650}}
+:root[data-theme="dark"]{--bg:#0f1420;--card:#192032;--tx:#eef1f8;--mut:#a3adc2;--ac:#6ea0ff;--acx:#0b1020;--ok:#6ee7a8;--okb:#12342a;--no:#ff8a80;--nob:#3a1a1c;--bd:#2c3650}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:16px}
+.banner{font-size:12px;color:var(--mut);text-align:center;border:1px dashed var(--bd);border-radius:8px;padding:6px 8px;margin-bottom:12px}
+h1{font-size:24px;margin:8px 0 4px}h2{font-size:18px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
+.mut{color:var(--mut);font-size:14px}
+button{font:inherit;cursor:pointer}
+.opt,.chip{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1.5px solid var(--bd);border-radius:12px;padding:12px 14px;margin:8px 0}
+.chip{display:inline-block;width:auto;margin:4px 6px 4px 0;padding:8px 14px;border-radius:999px}
+.chip.on{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+.opt.ok{background:var(--okb);border-color:var(--ok)}
+.opt.no{background:var(--nob);border-color:var(--no)}
+.opt:disabled{cursor:default;color:var(--tx)}
+.go{display:block;width:100%;background:var(--ac);color:var(--acx);border:0;border-radius:12px;padding:14px;font-weight:600;margin-top:8px}
+.bar{height:8px;background:var(--bd);border-radius:99px;overflow:hidden;margin:8px 0 14px}
+.bar i{display:block;height:100%;background:var(--ac)}
+.exp{border-left:4px solid var(--ac);padding:8px 12px;margin-top:10px;background:var(--bg);border-radius:6px;font-size:15px}
+.big{font-size:44px;font-weight:700;margin:4px 0}
+.row{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--bd);font-size:15px}
+.tag{font-size:12px;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<div class="banner">Unofficial study tool. Not affiliated with or endorsed by Microsoft. All questions are original.</div>
+<div id="app"></div>
+</main>
+<script>
+var D={C:"Cloud Concepts",A:"Azure Architecture & Services",G:"Management & Governance"};
+var Q=[
+["C","A company stops buying servers and instead rents virtual machines, paying monthly. This is a shift from:",["OpEx to CapEx","CapEx to OpEx","Fixed cost to free","Public to private"],1,"Buying hardware is capital expenditure (CapEx). Renting cloud resources and paying as you go is operational expenditure (OpEx)."],
+["C","Which cloud benefit lets you pay only for what you actually use?",["Consumption-based pricing","Fixed licensing","Prepaid hardware","Colocation"],0,"Consumption-based pricing means no upfront cost and billing based on usage."],
+["C","In an IaaS virtual machine, who is responsible for patching the guest operating system?",["The cloud provider","The customer","Both equally","Nobody"],1,"With IaaS the provider runs the physical infrastructure, but the customer manages the OS, apps and data."],
+["C","Which service model gives you a finished application to use, with no infrastructure to manage?",["IaaS","PaaS","SaaS","On-premises"],2,"SaaS delivers complete software over the internet, such as web email."],
+["C","A bank keeps sensitive data in its own datacenter and runs other workloads in a public cloud. This is a:",["Private cloud","Hybrid cloud","Community cloud","Edge cloud"],1,"Hybrid cloud combines on-premises or private resources with public cloud."],
+["C","A shop’s website automatically gains servers during a sale and releases them afterward. This describes:",["Elasticity","Geo-distribution","Immutability","Latency"],0,"Elasticity is automatically adding and removing resources to match demand."],
+["C","A 99.9% SLA is best described as:",["A guarantee of zero outages","A commitment to a target level of uptime","A security certification","A pricing tier"],1,"An SLA is a formal uptime target. It allows some downtime and usually offers credits if missed."],
+["A","What is an Azure region?",["One server rack","A set of datacenters connected by a low-latency network in a geographic area","A billing account","A type of subscription"],1,"Regions are geographic areas containing one or more datacenters, such as South Africa North."],
+["A","Availability Zones primarily protect your app from:",["Accidental deletion","A datacenter-level failure inside a region","Price changes","Expired passwords"],1,"Zones are physically separate locations within a region, so one failing does not take down the others."],
+["A","What is a resource group?",["A logical container for related Azure resources","A pricing discount","A physical datacenter","A network firewall"],0,"Resource groups organise resources that share a lifecycle so you can manage or delete them together."],
+["A","Which service runs small pieces of code in response to events without managing servers?",["Azure Functions","Azure Virtual Network","Azure Blob Storage","Azure DNS"],0,"Azure Functions is a serverless compute service triggered by events like HTTP requests or timers."],
+["A","Which storage option suits large amounts of unstructured data like photos and videos?",["Blob storage","Queue storage only","A relational table","Azure Policy"],0,"Blob storage is built for massive unstructured objects."],
+["A","What is the main purpose of an Azure Virtual Network?",["Host web pages","Let Azure resources communicate privately and securely","Send email","Track spending"],1,"A virtual network is your private network space in Azure, with subnets and routing."],
+["A","Which service lets you host a web app without managing the underlying servers?",["Azure App Service","A bare VM","Azure Backup","Azure Advisor"],0,"App Service is a PaaS offering for web apps and APIs."],
+["A","A company wants a private connection from its office to Azure that does not use the public internet. Best fit:",["ExpressRoute","Azure CDN","Public IP","Azure Monitor"],0,"ExpressRoute provides a dedicated private connection through a connectivity provider."],
+["A","Which service manages user identities and sign-in for Azure and apps?",["Microsoft Entra ID","Azure Cosmos DB","Azure Files","Azure Bastion"],0,"Microsoft Entra ID (formerly Azure Active Directory) is the cloud identity and access service."],
+["G","Which tool enforces rules such as “only allow resources in approved regions”?",["Azure Policy","Resource lock","Tags","Azure Advisor"],0,"Azure Policy evaluates resources against rules and can deny or flag non-compliant ones."],
+["G","You want to stop anyone from accidentally deleting a critical resource. Use:",["A resource lock","A tag","A budget","A subscription"],0,"A Delete lock blocks deletion even for users with permission to delete."],
+["G","Which tool estimates the cost of resources before you deploy them?",["Pricing calculator","Azure Service Health","Cloud Shell","Entra ID"],0,"The pricing calculator lets you model services and see an estimated monthly cost."],
+["G","Which service gives personalised recommendations to improve cost, security and reliability?",["Azure Advisor","Azure Policy","Azure Blueprints only","Azure CLI"],0,"Azure Advisor analyses your resources and suggests best-practice improvements."],
+["G","Role-based access control (RBAC) is used to:",["Grant users permissions at a chosen scope","Encrypt disks","Estimate costs","Create virtual networks"],0,"RBAC assigns roles such as Reader or Contributor at management group, subscription, resource group or resource scope."],
+["G","Why would you apply tags to resources?",["To organise and track them, for example by department for billing","To make them faster","To change their region","To lock them"],0,"Tags are name-value pairs that help with cost reporting and organisation."],
+["G","Which service collects and analyses telemetry such as metrics and logs?",["Azure Monitor","Azure Files","Azure DNS","Azure Lighthouse"],0,"Azure Monitor gathers performance and log data and can raise alerts."],
+["G","Which lets you manage Azure with commands from a browser without installing anything?",["Azure Cloud Shell","Azure Backup","Azure Policy","A VPN gateway"],0,"Cloud Shell is a browser-based terminal with Azure CLI and PowerShell."],
+["C","For SaaS, which responsibility always stays with the customer?",["Their data and who can access it","Physical security of the datacenter","The hypervisor","The network cables"],0,"Even with SaaS, customers remain responsible for their data, user accounts and access settings."],
+["C","A private cloud is best described as a cloud:",["Used exclusively by one organisation","Shared by everyone on the internet","Without any virtualisation","That only stores backups"],0,"A private cloud is dedicated to a single organisation, on-premises or hosted."],
+["C","Why can large cloud providers offer lower prices per unit?",["Economies of scale","They skip security","They avoid taxes","They use fewer customers"],0,"Buying and running hardware at huge scale lowers the cost per unit, and savings are passed on."],
+["C","Which is the best example of a PaaS offering?",["Azure SQL Database","A rented virtual machine","Microsoft 365","A server in your own office"],0,"With a managed database service you manage the data and app while the provider runs the platform and OS."],
+["C","The ability of a system to keep running when one component fails is called:",["Fault tolerance","Governance","Elasticity","Chargeback"],0,"Fault tolerance means redundancy lets the service continue despite failures."],
+["A","Which service automatically adds or removes identical VMs based on demand?",["Virtual Machine Scale Sets","Azure Policy","Azure Backup","Azure DNS"],0,"Scale sets manage a group of load-balanced identical VMs that grow and shrink with demand."],
+["A","Which database service is globally distributed and supports multiple NoSQL data models?",["Azure Cosmos DB","Azure Files","Azure Bastion","Azure Monitor"],0,"Cosmos DB offers low-latency, globally distributed NoSQL storage."],
+["A","Which service helps you deploy and manage containerised apps using Kubernetes?",["Azure Kubernetes Service","Azure Advisor","Azure Blob Storage","Azure Lighthouse"],0,"AKS is a managed Kubernetes service that handles much of the cluster management."],
+["A","Which service spreads incoming network traffic across several servers?",["Azure Load Balancer","Azure Key Vault","Azure Cost Management","Azure Backup"],0,"A load balancer distributes traffic to healthy instances for better availability and performance."],
+["A","A VPN gateway is used to:",["Create an encrypted connection between networks over the internet","Store files","Track spending","Run containers"],0,"A VPN gateway sends encrypted traffic between an Azure virtual network and another network."],
+["A","In Azure, a subscription is:",["A unit of access and billing that holds resource groups","A single virtual machine","A physical datacenter","A type of tag"],0,"Subscriptions are the boundary for billing and access, and contain resource groups and resources."],
+["A","What do management groups let you do?",["Organise and apply governance across multiple subscriptions","Encrypt a disk","Estimate costs","Create a website"],0,"Management groups sit above subscriptions so policies and access can be applied to many at once."],
+["A","Which service provides fully managed file shares accessible over SMB?",["Azure Files","Azure Functions","Azure Advisor","Azure Monitor"],0,"Azure Files offers cloud file shares you can mount like a network drive."],
+["A","Which service runs a container without you managing any servers?",["Azure Container Instances","Azure Policy","Azure Virtual Network","Azure DNS"],0,"Container Instances starts containers quickly without managing VMs."],
+["A","What is Azure Resource Manager?",["The deployment and management layer for Azure resources","A billing report","A storage type","A firewall"],0,"Every portal, CLI and template request goes through Resource Manager, which handles create, update and delete."],
+["G","Which service helps you assess and improve your security posture across resources?",["Microsoft Defender for Cloud","Azure Files","Azure DNS","Pricing calculator"],0,"Defender for Cloud gives security recommendations and threat protection."],
+["G","Where do you see Azure outages or planned maintenance that affect your resources?",["Azure Service Health","Azure Blob Storage","Azure Functions","Resource locks"],0,"Service Health gives personalised alerts about incidents impacting your services."],
+["G","Multi-factor authentication improves security by:",["Requiring more than one proof of identity","Using a longer password only","Hiding the username","Blocking all logins"],0,"MFA combines something you know, have or are, so a stolen password alone is not enough."],
+["G","The Zero Trust approach is summarised as:",["Never trust, always verify","Trust the internal network","Trust known devices forever","Verify once a year"],0,"Zero Trust assumes breach and verifies every request explicitly."],
+["G","Which service lets you manage servers outside Azure, such as on-premises, from Azure?",["Azure Arc","Azure Files","Azure CDN","Azure Backup"],0,"Arc extends Azure management and governance to resources running elsewhere."],
+["G","Which tool compares the cost of running workloads on-premises against Azure?",["Total Cost of Ownership calculator","Azure Monitor","Azure Policy","Cloud Shell"],0,"The TCO calculator estimates savings from moving workloads to Azure."],
+["G","Where should an app securely store secrets such as keys and passwords?",["Azure Key Vault","A tag","A public blob","A resource group name"],0,"Key Vault safeguards secrets, keys and certificates with access control."],
+["G","How can you lower costs for resources you know you will use for one to three years?",["Azure Reservations","Resource locks","Tags","Cloud Shell"],0,"Reservations give a discount in return for a long-term commitment."],
+["G","Defense in depth means:",["Using multiple layers of security","Relying on one strong firewall","Hiding all servers","Using only passwords"],0,"Layered protection means if one control fails, others still protect your data."]
+];
+var S={dom:"ALL",n:10,pool:[],i:0,sc:0,res:[],done:false};
+var $=function(x){return document.getElementById(x)};
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function best(){try{return localStorage.getItem("qb_best")}catch(e){return null}}
+function setBest(v){try{var b=parseInt(localStorage.getItem("qb_best")||"-1",10);if(v>b)localStorage.setItem("qb_best",String(v))}catch(e){}}
+function readyCard(){var h;try{h=JSON.parse(localStorage.getItem("qb_hist")||"null")}catch(e){h=null}if(!h)return"";var t=0,c=0;var rows=Object.keys(D).map(function(d){var v=h[d]||[0,0];t+=v[1];c+=v[0];return '<div class="row"><span>'+D[d]+'</span><b>'+(v[1]?Math.round(v[0]/v[1]*100)+'%':'-')+'</b></div>'}).join("");var o=t?Math.round(c/t*100):0;return '<div class="card"><h2>Readiness tracker</h2><div class="bar"><i style="width:'+o+'%"></i></div><div class="mut">Overall accuracy '+o+'% across '+t+' answers. '+(o>=80?"Strong.":o>=60?"Getting close.":"Keep practising.")+'</div>'+rows+'</div>'}
+function rec(){try{var h=JSON.parse(localStorage.getItem("qb_hist")||"{}");S.res.forEach(function(r){var d=r.q[0];h[d]=h[d]||[0,0];h[d][1]++;if(r.ok)h[d][0]++});localStorage.setItem("qb_hist",JSON.stringify(h))}catch(e){}}
+function home(){
+var b=best();
+var chips=function(list,key,cur){return list.map(function(o){return '<button class="chip'+(String(o[0])===String(cur)?' on':'')+'" data-k="'+key+'" data-v="'+o[0]+'">'+o[1]+'</button>'}).join("")};
+var doms=[["ALL","All topics"],["C",D.C],["A","Architecture"],["G","Governance"]];
+$("app").innerHTML='<h1>Smart Quiz Builder</h1><p class="mut">AZ-900 Azure Fundamentals practice with an instant explanation after every answer.</p>'+
+'<div class="card"><h2>Topic</h2>'+chips(doms,"dom",S.dom)+'<h2 style="margin-top:14px">Questions</h2>'+chips([[5,"5"],[10,"10"],[20,"20"]],"n",S.n)+
+'<button class="go" id="start">Start quiz</button></div>'+
+(b!==null?'<div class="card mut">Your best score on this device: <b>'+b+'%</b></div>':'')+readyCard()+
+'<div class="card mut">'+Q.length+' original practice questions. Answer order is shuffled every time. Missed questions can be retried, and your readiness by topic builds as you practise.</div>';
+document.querySelectorAll(".chip").forEach(function(c){c.onclick=function(){var k=c.dataset.k,v=c.dataset.v;S[k]=k==="n"?parseInt(v,10):v;home()}});
+$("start").onclick=start}
+function start(){
+var src=Q.filter(function(q){return S.dom==="ALL"||q[0]===S.dom});
+S.pool=sh(src).slice(0,S.n);S.i=0;S.sc=0;S.res=[];ask()}
+function ask(){
+var q=S.pool[S.i];
+var opts=sh(q[2].map(function(t,k){return{t:t,c:k===q[3]}}));
+S.cur={q:q,o:opts,ans:false};
+var pct=Math.round(S.i/S.pool.length*100);
+$("app").innerHTML='<div class="mut">Question '+(S.i+1)+' of '+S.pool.length+' · '+D[q[0]]+'</div><div class="bar"><i style="width:'+pct+'%"></i></div>'+
+'<div class="card"><h2>'+q[1]+'</h2><div id="opts">'+opts.map(function(o,k){return '<button class="opt" data-k="'+k+'">'+o.t+'</button>'}).join("")+'</div><div id="fb"></div></div>';
+document.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){pick(parseInt(b.dataset.k,10))}});
+window.scrollTo(0,0)}
+function pick(k){
+var c=S.cur;if(c.ans)return;c.ans=true;
+var right=c.o[k].c;if(right)S.sc++;
+S.res.push({q:c.q,ok:right,you:c.o[k].t,corr:c.o.filter(function(o){return o.c})[0].t});
+document.querySelectorAll(".opt").forEach(function(b,j){b.disabled=true;if(c.o[j].c)b.classList.add("ok");else if(j===k)b.classList.add("no")});
+var last=S.i===S.pool.length-1;
+$("fb").innerHTML='<div class="exp"><b>'+(right?"Correct.":"Not quite.")+'</b> '+c.q[4]+'</div><button class="go" id="nx">'+(last?"See results":"Next question")+'</button>';
+$("nx").onclick=function(){if(last)finish();else{S.i++;ask()}};
+$("nx").scrollIntoView({block:"nearest"})}
+function ready(p){return p>=80?"Looking exam-ready. Keep practising weak spots.":p>=60?"Getting close. Review the missed topics and retry.":"Keep going. Revise the explanations below and try again."}
+function finish(){
+var p=Math.round(S.sc/S.pool.length*100);setBest(p);rec();
+var by={};S.res.forEach(function(r){var d=r.q[0];by[d]=by[d]||[0,0];by[d][1]++;if(r.ok)by[d][0]++});
+var rows=Object.keys(by).map(function(d){return '<div class="row"><span>'+D[d]+'</span><b>'+by[d][0]+'/'+by[d][1]+'</b></div>'}).join("");
+var miss=S.res.filter(function(r){return !r.ok});
+var rev=miss.length?miss.map(function(r){return '<div class="card"><div class="tag">'+D[r.q[0]]+'</div><p><b>'+r.q[1]+'</b></p><p class="mut">Your answer: '+r.you+'<br>Correct: '+r.corr+'</p><div class="exp">'+r.q[4]+'</div></div>'}).join(""):'<div class="card">Perfect round. No mistakes to review.</div>';
+$("app").innerHTML='<div class="card" style="text-align:center"><div class="mut">Your score</div><div class="big">'+p+'%</div><div>'+S.sc+' of '+S.pool.length+' correct</div><p class="mut">'+ready(p)+'</p></div>'+
+'<div class="card"><h2>By topic</h2>'+rows+'</div><h2>'+(miss.length?"Review your mistakes":"Review")+'</h2>'+rev+
+(miss.length?'<button class="go" id="rt">Retry only my missed questions</button>':'')+'<button class="go" id="again">Try again</button><button class="go" id="hm" style="background:transparent;color:var(--ac);border:1.5px solid var(--ac)">Change topic</button>';
+$("again").onclick=start;if($("rt"))$("rt").onclick=function(){S.pool=sh(miss.map(function(r){return r.q}));S.i=0;S.sc=0;S.res=[];ask()};$("hm").onclick=home;window.scrollTo(0,0)}
+home();
+</script>
+</body>
+</html>
