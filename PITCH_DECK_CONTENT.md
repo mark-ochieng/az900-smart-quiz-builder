@@ -1,31 +1,24 @@
-# Canva Deck Content: Smart Quiz Builder (Unofficial AZ-900 Practice)
+# pitch Deck Content: Smart Quiz Builder (Unofficial AZ-900 Practice)
 
-Copy each block into the matching slide of the Canva template. Fill the `[ ]` placeholders yourself; they are things only you know.
-
----
-
-## Slide 1: Instructions
-**Delete this slide.**
 
 ---
 
-## Slide 2: Title Slide
+## Slide 1: Title Slide
 **Title:** Smart Quiz Builder
 **Subtitle:** Learn *why* an answer is right, not just which one. An unofficial AZ-900 practice tool for the #1MillionDevs Vibe Coding Hackathon.
 
 ---
 
-## Slide 3: Problem / Idea
+## Slide 2: Problem / Idea
 **Heading:** Learners practise, but don't understand
 
 - Many AZ-900 learners practise with questions but can't explain why an answer is right or wrong.
 - They memorise answers, then get stuck when the wording changes.
 - They don't know which topics are weak until it is too late.
-- [Add one sentence from your own AZ-900 preparation: a time you guessed right or got it wrong without knowing why.]
 
 ---
 
-## Slide 4: Solution
+## Slide 3: Solution
 **Heading:** A quiz that teaches
 
 - Instant feedback after every answer
@@ -37,7 +30,7 @@ Copy each block into the matching slide of the Canva template. Fill the `[ ]` pl
 
 ---
 
-## Slide 5: Product
+## Slide 4: Product
 **Heading:** How it works
 
 1. Pick a topic and a quiz length (5, 10 or 20 questions).
@@ -49,11 +42,11 @@ Copy each block into the matching slide of the Canva template. Fill the `[ ]` pl
 **Resources to embed:**
 - Live demo: https://claude.ai/artifact/81xeFMAvdwx4GaSW8MyMRU
 - GitHub: https://github.com/mark-ochieng/az900-smart-quiz-builder
-- [Insert your 30 to 45 second screen recording]
+- https://drive.google.com/file/d/1w9x2skkfX0x6_RmZZ1c4v6uXS5AsZzZq/view?usp=drivesdk
 
 ---
 
-## Slide 6: Key Metrics & Statistics
+## Slide 5: Key Metrics & Statistics
 Use real numbers from the project. Replace the template placeholders (2 out of 5, 95%, 123 million):
 
 - **48** original practice questions
@@ -63,7 +56,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 
 ---
 
-## Slide 6 (second): Target Market
+## Slide 6 : Target Market
 **Heading:** Who it is for
 
 - Beginners preparing for Azure Fundamentals (AZ-900)
@@ -80,7 +73,7 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 - AZ-900 is the entry-level Azure certification, which makes it the first step for many cloud learners.
 - The same format extends to other fundamentals-level certifications such as AI-900 and security or data fundamentals.
 - Initial focus: learners inside the #1MillionDevs community and African universities.
-- [Optional: add a verified figure for the number of 1MillionDevs learners or your campus IT cohort. Do not use numbers you cannot source.]
+
 
 ---
 
@@ -161,20 +154,19 @@ Use real numbers from the project. Replace the template placeholders (2 out of 5
 - **Mentorship:** guidance on scaling the product and adding a backend
 - **Partnerships:** cohort leaders and training communities to use it
 - **Resources:** hosting credits and tool access (Supabase and similar) to add accounts and analytics
-- No fixed funding amount at this stage. [Add one if the organisers ask for it.]
+- No fixed funding amount at this stage. 
 
 ---
 
 ## Slide 15: Team Members
 - **Mark Ochieng:** Founder and Developer
-- [Add any teammates who helped, with their titles]
+  
 
 ---
 
 ## Slide 16: Thank You & Contacts
 **Thank you!**
-- GitHub: https://github.com/mark-ochieng/az900-smart-quiz-builder
-- Live demo: https://claude.ai/artifact/81xeFMAvdwx4GaSW8MyMRU
+- GitHub: https://github.com/mark-ochieng
 - Email:cruxificio.mark@gmail.com
 - LinkedIn: https://www.linkedin.com/in/john-mark-a086a4346?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
